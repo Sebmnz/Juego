@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Redirigir a una web específica después de 12 segundos
         setTimeout(() => {
             window.location.href = 'https://www.example.com'; // Reemplaza con la URL deseada
-        }, 6000);
+        }, 12000);
     }
 
     function incrementLeftScore() {
