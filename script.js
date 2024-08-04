@@ -52,8 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Redirigir a una web específica después de 12 segundos
         setTimeout(() => {
-            window.location.href = 'https://www.example.com'; // Reemplaza con la URL deseada
-        }, 12000);
+            window.location.href = 'https://www.instagram.com/sebasm97'; // Reemplaza con la URL deseada
+        }, 6000);
     }
 
     function incrementLeftScore() {
