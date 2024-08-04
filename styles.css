@@ -1,0 +1,69 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    flex-direction: column;
+    font-family: 'Lato', sans-serif; /* Aplicar la fuente Lato */
+}
+
+#game-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    display: none; /* Ocultar el contenedor del juego inicialmente */
+}
+
+.side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: white;
+    user-select: none;
+}
+
+#left-side {
+    background-color: red;
+}
+
+#right-side {
+    background-color: blue;
+}
+
+.message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    font-size: 2em;
+    display: none;
+}
+
+.start-button {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.intro-message {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 1.5em;
+    color: #333;
+    padding: 20px;
+}
