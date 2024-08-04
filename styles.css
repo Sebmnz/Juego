@@ -26,13 +26,14 @@ body, html {
     font-size: 2em;
     color: white;
     user-select: none;
+    transition: background-color 0.3s; /* Añadir transición para el cambio de color */
 }
 
 #left-side {
     background-color: red;
 }
 
-#right-side  {
+#right-side {
     background-color: blue;
 }
 
