@@ -54,12 +54,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function incrementLeftScore() {
-        leftScore++;
+        if (leftScore >= 40) {
+            leftScore += 3;
+        } else if (leftScore >= 25) {
+            leftScore += 2;
+        } else {
+            leftScore++;
+        }
         updateSizes();
     }
 
     function incrementRightScore() {
-        rightScore++;
+        if (rightScore >= 40) {
+            rightScore += 3;
+        } else if (rightScore >= 25) {
+            rightScore += 2;
+        } else {
+            rightScore++;
+        }
         updateSizes();
     }
 
@@ -78,3 +90,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateSizes();
 });
+
