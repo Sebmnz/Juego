@@ -8,15 +8,15 @@ body, html {
     align-items: center;
     background-color: #f0f0f0;
     flex-direction: column;
-    font-family: 'Lato', sans-serif; /* Aplicar la fuente Lato */
+    font-family: 'Lato', sans-serif; 
 }
 
 #game-container {
     display: flex;
-    flex-direction: column; /* Cambiar a disposición vertical */
+    flex-direction: column; /* Cambiar orientacion vertical */
     width: 100%;
     height: 100vh;
-    display: none; /* Ocultar el contenedor del juego inicialmente */
+    display: none; /* Ocultar el contenedor */
 }
 
 .side {
