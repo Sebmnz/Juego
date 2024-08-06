@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const message = document.getElementById('message');
     const startButton = document.getElementById('start-button');
     const introMessage = document.getElementById('intro-message');
-    const finalMessage = document.getElementById('final-message');
-    const slotMachine = document.getElementById('slot-machine');
+    const dots = document.getElementById('dots');
+    const finalOption = document.getElementById('final-option');
     const clickSound = document.getElementById('click-sound');
     let leftScore = 10;  // Iniciar con 10 puntos
     let rightScore = 10;  // Iniciar con 10 puntos
@@ -21,13 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return options[randomIndex];
     }
 
-    function startSlotMachine() {
-        slotMachine.style.animation = 'spin 0.5s linear infinite';
-        setTimeout(() => {
-            slotMachine.style.animation = 'none';
-            const randomOption = getRandomOption();
-            finalMessage.textContent = `A continuación vais a jugar uno contra el otro y el perdedor tendrá que ${randomOption}.`;
-        }, 3000);
+    function showFinalOption() {
+        dots.style.display = 'none';
+        const randomOption = getRandomOption();
+        finalOption.textContent = randomOption;
+        finalOption.style.display = 'inline';
     }
 
     function updateSizes() {
@@ -125,6 +123,12 @@ document.addEventListener('DOMContentLoaded', () => {
         leftSide.addEventListener('click', incrementLeftScore);
         rightSide.addEventListener('click', incrementRightScore);
     }
+
+    startButton.addEventListener('click', startGame);
+
+    // Mostrar puntos suspensivos y luego la opción final
+    setTimeout(showFinalOption, 3000);
+});
 
     startButton.addEventListener('click', startGame);
 
