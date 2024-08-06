@@ -4,11 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const message = document.getElementById('message');
     const startButton = document.getElementById('start-button');
     const introMessage = document.getElementById('intro-message');
-    const revealButton = document.getElementById('reveal-button');
-    const finalOption = document.getElementById('final-option');
     const clickSound = document.getElementById('click-sound');
     let leftScore = 10;  // Iniciar con 10 puntos
     let rightScore = 10;  // Iniciar con 10 puntos
+    let leftStreak = 0;
+    let rightStreak = 0;
 
     const options = [
         'invitar a un chupito al otro',
@@ -19,14 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function getRandomOption() {
         const randomIndex = Math.floor(Math.random() * options.length);
         return options[randomIndex];
-    }
-
-    function showFinalOption() {
-        const randomOption = getRandomOption();
-        finalOption.textContent = randomOption;
-        finalOption.style.display = 'inline';
-        revealButton.style.display = 'none';
-        startButton.style.display = 'inline';
     }
 
     function updateSizes() {
@@ -66,6 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function incrementLeftScore() {
         let increment = 1;
+        leftStreak++;
+        rightStreak = 0;
 
         if (leftScore >= 40) {
             increment = 3;
@@ -86,6 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function incrementRightScore() {
         let increment = 1;
+        rightStreak++;
+        leftStreak = 0;
 
         if (rightScore >= 40) {
             increment = 3;
@@ -125,6 +121,10 @@ document.addEventListener('DOMContentLoaded', () => {
         rightSide.addEventListener('click', incrementRightScore);
     }
 
-    revealButton.addEventListener('click', showFinalOption);
+    const randomOption = getRandomOption();
+    introMessage.textContent = `A continuación vais a jugar uno contra el otro y el perdedor tendrá que ${randomOption}.`;
+
     startButton.addEventListener('click', startGame);
+
+    updateSizes();
 });
