@@ -128,4 +128,3 @@ document.addEventListener('DOMContentLoaded', () => {
     revealButton.addEventListener('click', showFinalOption);
     startButton.addEventListener('click', startGame);
 });
-
