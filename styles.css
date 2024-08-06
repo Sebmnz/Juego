@@ -61,7 +61,7 @@ body, html {
 
 .reveal-button {
     position: absolute;
-    top: 80%; /* Ajustar la posición del botón de castigo */
+    top: 70%; /* Ajustar la posición del botón de castigo */
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 10px 20px;
