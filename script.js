@@ -50,10 +50,10 @@ document.addEventListener('DOMContentLoaded', () => {
         leftSide.removeEventListener('click', incrementLeftScore);
         rightSide.removeEventListener('click', incrementRightScore);
 
-        // Redirigir a una web específica después de 12 segundos
+        // Redirigir a instagram
         setTimeout(() => {
-            window.location.href = 'https://www.example.com'; // Reemplaza con la URL deseada
-        }, 12000);
+            window.location.href = 'https://instagram.com/sebasm97'; // Redirecion web
+        }, 6000);
     }
 
     function incrementLeftScore() {
