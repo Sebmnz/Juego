@@ -4,11 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const message = document.getElementById('message');
     const startButton = document.getElementById('start-button');
     const introMessage = document.getElementById('intro-message');
+    const finalMessage = document.getElementById('final-message');
+    const slotMachine = document.getElementById('slot-machine');
     const clickSound = document.getElementById('click-sound');
     let leftScore = 10;  // Iniciar con 10 puntos
     let rightScore = 10;  // Iniciar con 10 puntos
-    let leftStreak = 0;
-    let rightStreak = 0;
 
     const options = [
         'invitar a un chupito al otro',
@@ -19,6 +19,15 @@ document.addEventListener('DOMContentLoaded', () => {
     function getRandomOption() {
         const randomIndex = Math.floor(Math.random() * options.length);
         return options[randomIndex];
+    }
+
+    function startSlotMachine() {
+        slotMachine.style.animation = 'spin 0.5s linear infinite';
+        setTimeout(() => {
+            slotMachine.style.animation = 'none';
+            const randomOption = getRandomOption();
+            finalMessage.textContent = `A continuación vais a jugar uno contra el otro y el perdedor tendrá que ${randomOption}.`;
+        }, 3000);
     }
 
     function updateSizes() {
@@ -52,14 +61,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Redirigir a una web específica después de 12 segundos
         setTimeout(() => {
-            window.location.href = 'https://www.instagram.com/sebasm97'; // Reemplaza con la URL deseada
-        }, 6000);
+            window.location.href = 'https://www.example.com'; // Reemplaza con la URL deseada
+        }, 12000);
     }
 
     function incrementLeftScore() {
         let increment = 1;
-        leftStreak++;
-        rightStreak = 0;
 
         if (leftScore >= 40) {
             increment = 3;
@@ -80,8 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function incrementRightScore() {
         let increment = 1;
-        rightStreak++;
-        leftStreak = 0;
 
         if (rightScore >= 40) {
             increment = 3;
@@ -121,10 +126,8 @@ document.addEventListener('DOMContentLoaded', () => {
         rightSide.addEventListener('click', incrementRightScore);
     }
 
-    const randomOption = getRandomOption();
-    introMessage.textContent = `A continuación vais a jugar uno contra el otro y el perdedor tendrá que ${randomOption}.`;
-
     startButton.addEventListener('click', startGame);
 
-    updateSizes();
+    startSlotMachine();
 });
+
