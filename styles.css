@@ -49,14 +49,27 @@ body, html {
     display: none;
 }
 
-.start-button, .reveal-button {
+.start-button {
     position: absolute;
-    top: 60%;
+    top: 70%; /* Ajustar la posición del botón de inicio */
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 10px 20px;
     font-size: 1.5em;
     cursor: pointer;
+}
+
+.reveal-button {
+    position: absolute;
+    top: 60%; /* Ajustar la posición del botón de castigo */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-size: 1.5em;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    border: none;
 }
 
 .intro-message {
